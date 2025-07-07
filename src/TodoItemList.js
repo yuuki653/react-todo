@@ -4,7 +4,7 @@ import TodoItem from "./TodoItem";
 
 function TodoItemList({ todos, onToggle, onDelete }) {
   return (
-    <ul>
+    <ul className={styles.items}>
       {todos.map((todo) => (
         <TodoItem
           key={todo.id}

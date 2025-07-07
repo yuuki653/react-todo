@@ -1,11 +1,40 @@
-.listItem{
-    list-style: none;
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
+/* AddTask */
+
+.addBtn{
+    margin-left: 20px;
 }
+
+
+/* FilterButtons */
 
 .completed{
     text-decoration: line-through;
     color: #888;
+}
+
+
+/* TodoItemList */
+
+.items{
+    padding-inline-start: 10px;
+}
+
+
+/* Todoitem */
+
+.listItem{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+}
+
+
+.filterBtn + .filterBtn{
+    margin-left: 20px;
+}
+
+.deleteBtn{
+    margin-left: 20px;
 }

@@ -13,7 +13,9 @@ function AddTask({ task, onChange, onAdd }) {
         }}
         placeholder="やることを入力"
       />
-      <button onClick={onAdd}>追加</button>
+      <button className={styles.addBtn} onClick={onAdd}>
+        追加
+      </button>
     </>
   );
 }
