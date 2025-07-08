@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import styles from "./style.module.css";
 
 function AddTask({ task, onChange, onAdd }) {
@@ -7,9 +6,13 @@ function AddTask({ task, onChange, onAdd }) {
     <>
       <input
         type="text"
+        className={styles.textArea}
         value={task}
         onChange={(e) => {
           onChange(e.target.value);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") onAdd();
         }}
         placeholder="やることを入力"
       />

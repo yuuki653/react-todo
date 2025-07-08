@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import styles from "./style.module.css";
 
 function TodoItem({ todo, onToggle, onDelete }) {

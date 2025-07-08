@@ -1,15 +1,32 @@
+/* 各ボタン */
+
+.filterBtn, .addBtn, .deleteBtn {
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+
 /* AddTask */
 
 .addBtn{
     margin-left: 20px;
 }
 
+.textArea{
+    height: 30px;
+}
+
 
 /* FilterButtons */
 
-.completed{
-    text-decoration: line-through;
-    color: #888;
+.filterBtn + .filterBtn{
+    margin-left: 20px;
+}
+
+.active{
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #013c7c;
 }
 
 
@@ -28,11 +45,12 @@
     justify-content: space-between;
     align-items: center;
     width: 500px;
+    margin-top: 10px;
 }
 
-
-.filterBtn + .filterBtn{
-    margin-left: 20px;
+.completed{
+    text-decoration: line-through;
+    color: #888;
 }
 
 .deleteBtn{

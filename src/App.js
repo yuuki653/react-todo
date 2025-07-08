@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./style.module.css";
 import AddTask from "./AddTask";
 import FilterButtons from "./FilterButtons";
@@ -46,13 +45,21 @@ function App() {
     return true;
   });
 
+  const handleDeleteCompleted = () => {
+    setTodos(todos.filter((todo) => todo.completed === false));
+  };
+
   return (
     <>
       <h1>Todoリスト</h1>
       <AddTask task={task} onChange={setTask} onAdd={handleAdd} />
       <br />
       <br />
-      <FilterButtons onFilter={setFilterType} />
+      <FilterButtons
+        onFilter={setFilterType}
+        onDeleteCompleted={handleDeleteCompleted}
+        current={filterType}
+      />
       <br />
       <TodoItemList
         todos={filteredTodos}
