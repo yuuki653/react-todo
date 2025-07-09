@@ -5,6 +5,12 @@
     border-radius: 4px;
 }
 
+.filterBtn:hover,
+.addBtn:hover,
+.deleteBtn:hover {
+    opacity: 0.3;
+}
+
 
 /* AddTask */
 
@@ -26,7 +32,14 @@
 .active{
     background-color: #007bff;
     color: #fff;
-    border: 1px solid #013c7c;
+    border: 2px solid #013c7c;
+}
+
+
+.deleteCompletedBtn{
+    background-color: #ffb4b4;
+    color: #000000;
+    border: 2px solid #a10404;
 }
 
 
@@ -53,6 +66,17 @@
     color: #888;
 }
 
+.checks{
+    display: flex;
+    align-items: center;
+}
+
 .deleteBtn{
     margin-left: 20px;
+}
+
+.checkBox{
+    width: 20px;
+    height: 20px;
+    align-items: center;
 }

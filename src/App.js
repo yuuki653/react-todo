@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import AddTask from "./AddTask";
 import FilterButtons from "./FilterButtons";
@@ -8,6 +8,17 @@ function App() {
   const [task, setTask] = useState("");
   const [todos, setTodos] = useState([]);
   const [filterType, setFilterType] = useState("all");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("todos");
+    if (saved) {
+      setTodos(JSON.parse(saved));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const handleAdd = () => {
     if (!task.trim()) {

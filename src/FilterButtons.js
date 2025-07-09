@@ -28,7 +28,10 @@ function FilterButtons({ onFilter, onDeleteCompleted, current }) {
       >
         完了
       </button>
-      <button className={styles.filterBtn} onClick={onDeleteCompleted}>
+      <button
+        className={`${styles.filterBtn} ${styles.deleteCompletedBtn}`}
+        onClick={onDeleteCompleted}
+      >
         完了を一括削除
       </button>
     </>
