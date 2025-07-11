@@ -8,6 +8,8 @@ function App() {
   const [task, setTask] = useState("");
   const [todos, setTodos] = useState([]);
   const [filterType, setFilterType] = useState("all");
+  const [editingId, setEditingId] = useState(null);
+  const [editText, setEditText] = useState("");
 
   useEffect(() => {
     const saved = localStorage.getItem("todos");
@@ -60,6 +62,23 @@ function App() {
     setTodos(todos.filter((todo) => todo.completed === false));
   };
 
+  const handleDeleteAll = () => {
+    setTodos([]);
+  };
+
+  const handleEditStart = (todo) => {
+    setEditingId(todo.id);
+    setEditText(todo.text);
+  };
+
+  const handleEditSave = (id) => {
+    setTodos(
+      todos.map((todo) => (todo.id === id ? { ...todo, text: editText } : todo))
+    );
+    setEditingId(null);
+    setEditText("");
+  };
+
   return (
     <>
       <h1>Todoリスト</h1>
@@ -69,13 +88,20 @@ function App() {
       <FilterButtons
         onFilter={setFilterType}
         onDeleteCompleted={handleDeleteCompleted}
+        onDeleteAll={handleDeleteAll}
+        onDelete={handleDeleteCompleted}
         current={filterType}
       />
       <br />
       <TodoItemList
         todos={filteredTodos}
+        editingId={editingId}
+        editText={editText}
+        setEditText={setEditText}
         onToggle={handleToggle}
         onDelete={handleDelete}
+        onEditStart={handleEditStart}
+        onEditSave={handleEditSave}
       />
     </>
   );

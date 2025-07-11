@@ -6,7 +6,7 @@ function AddTask({ task, onChange, onAdd }) {
     <>
       <input
         type="text"
-        className={styles.textArea}
+        className={styles.textAreas}
         value={task}
         onChange={(e) => {
           onChange(e.target.value);
@@ -16,7 +16,7 @@ function AddTask({ task, onChange, onAdd }) {
         }}
         placeholder="やることを入力"
       />
-      <button className={styles.addBtn} onClick={onAdd}>
+      <button className={`${styles.addBtn} ${styles.btns}`} onClick={onAdd}>
         追加
       </button>
     </>

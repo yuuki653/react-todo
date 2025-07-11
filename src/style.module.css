@@ -1,34 +1,39 @@
 /* 各ボタン */
-
-.filterBtn, .addBtn, .deleteBtn {
+.btns{
     padding: 6px 12px;
     border-radius: 4px;
+    cursor: pointer;
+}
+.btns + .btns{
+    margin-left: 20px;
 }
 
-.filterBtn:hover,
-.addBtn:hover,
-.deleteBtn:hover {
+.btns:hover{
     opacity: 0.3;
 }
 
 
-/* AddTask */
-
-.addBtn{
-    margin-left: 20px;
+/* 削除系ボタン */
+.deleteBtn{
+    background-color: #ffb4b4;
+    color: #000000;
+    border: 2px solid #a10404;
 }
 
-.textArea{
+
+/* 各テキストエリア */
+.textAreas{
     height: 30px;
 }
 
 
-/* FilterButtons */
-
-.filterBtn + .filterBtn{
+/* AddTask */
+.addBtn{
     margin-left: 20px;
 }
 
+
+/* FilterButtons */
 .active{
     background-color: #007bff;
     color: #fff;
@@ -36,22 +41,13 @@
 }
 
 
-.deleteCompletedBtn{
-    background-color: #ffb4b4;
-    color: #000000;
-    border: 2px solid #a10404;
-}
-
-
 /* TodoItemList */
-
 .items{
     padding-inline-start: 10px;
 }
 
 
 /* Todoitem */
-
 .listItem{
     list-style: none;
     display: flex;
@@ -71,7 +67,7 @@
     align-items: center;
 }
 
-.deleteBtn{
+.editBtn{
     margin-left: 20px;
 }
 
